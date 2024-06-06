@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XR - Manager</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="quick_bar">
+        <div id="quickbar_loader" class="loader-grey">
+          <div class="loader"></div>
+        </div>
+        <div class="action">
+          <div class="container">
+            <div class="loader"></div>
+            <div class="row">
+              <i class="bi bi-arrow-clockwise refresh"></i>
+              <div class="text">
+                <p class="card-header">Total Consumers</p>
+                <h4 class="highlight-text" id="totalConsumer">00</h4>
+                <p class="lower-card-text">
+                  <span class="calc-text">+55%</span> since yesterday
+                </p>
+              </div>
+              <div class="icon">
+                <div class="ico-wrapper">
+                  <i class="bi bi-person-fill-add"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="action">
+          <div class="container">
+            <div class="row">
+              <div class="text">
+                <p class="card-header">Annual Consumer</p>
+                <h4 class="highlight-text" id="totalAnnual">623</h4>
+                <p class="lower-card-text">
+                  <span class="calc-text">+55%</span> since yesterday
+                </p>
+              </div>
+              <div class="icon">
+                <div class="ico-wrapper ico-yellow">
+                  <i class="bi bi-person-check"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="action">
+          <div class="container">
+            <div class="row">
+              <div class="text">
+                <p class="card-header">Recharge End</p>
+                <h4 class="highlight-text" id="totalRechargeEnd">131</h4>
+                <button>Send SMS</button>
+              </div>
+              <div class="icon">
+                <div class="ico-wrapper ico-orange">
+                  <i class="bi bi-wallet2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="action">
+          <div class="container">
+            <div class="row">
+              <div class="text">
+                <p class="card-header">Error Customer</p>
+                <h4 class="highlight-text" id="totalErrorCustomer">17</h4>
+                <button>Send SMS</button>
+              </div>
+              <div class="icon">
+                <div class="ico-wrapper ico-green">
+                  <i class="bi bi-person-exclamation"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list-container">
+        <div class="card">
+          <div id="deedup_loader" class="loader-grey">
+            <div class="loader"></div>
+          </div>
+
+          <p class="card-header">Deedup Consumer</p>
+          <div class="search-bar">
+            <label for="">
+              <i class="bi bi-search"></i>
+              <input
+                id="deedupSearchValue"
+                class="inputs"
+                type="text"
+                placeholder="Type Here.."
+              />
+            </label>
+            <button id="deedupSearchBtn">SEARCH</button>
+          </div>
+
+          <div class="consumer-data">
+            <p class="header_text"></p>
+            <div class="name-number fields">
+              <label for="">
+                <p class="inputs-header">Consumer No</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <input
+                  id="ct_cons_id"
+                  col="CONSUMER ID"
+                  class="inputs"
+                  placeholder="Enter Consumer No"
+                  type="text"
+                />
+              </label>
+              <label for="">
+                <p class="inputs-header">Number</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <input
+                  id="ct_number"
+                  col="MOBILE NO"
+                  class="inputs"
+                  placeholder="+91 993289650x"
+                  type="text"
+                />
+              </label>
+            </div>
+            <div class="status-subs fields">
+              <label for="">
+                <p class="inputs-header">Name</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <input
+                  id="ct_name"
+                  col="NAME"
+                  class="inputs"
+                  placeholder="Enter Name..."
+                  type="text"
+                />
+              </label>
+              <label for="">
+                <p class="inputs-header">Subscription</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <input
+                  id="ct_subscription"
+                  col="SUBSCRIPTION"
+                  maxlength="2"
+                  class="inputs"
+                  placeholder="0"
+                  type="text"
+                />
+              </label>
+            </div>
+            <div class="status-subs fields">
+              <label for="">
+                <p class="inputs-header">Staus</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <input
+                  id="ct_status"
+                  col="STATUS"
+                  class="inputs"
+                  placeholder="Anything..."
+                  type="text"
+                />
+              </label>
+
+              <label for="">
+                <p class="inputs-header">Spouse Name</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <input
+                  id="ct_spouse"
+                  col="SPOUSE NAME"
+                  class="inputs"
+                  placeholder="Anything..."
+                  type="text"
+                />
+              </label>
+            </div>
+
+            <div class="status-subs fields">
+              <label for="">
+                <p class="inputs-header">Village</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+
+                <input
+                  id="ct_village"
+                  col="VILLAGE"
+                  class="inputs"
+                  list="browsers"
+                  name="browser"
+                  id="browser"
+                />
+                <datalist id="browsers">
+                  <option value="PADMALAVPUR"></option>
+                  <option value="KUMARDUNI"></option>
+                  <option value="TARABERIA"></option>
+                  <option value="SHRIRAMPUR"></option>
+                  <option value="CHANKIA"></option>
+                  <option value="HEKAMPUR"></option>
+                  <option value="PRABHAKARKATI"></option>
+                  <option value="SASHIPUR"></option>
+                  <option value="NAPARA"></option>
+                  <option value="HAMIDPUR"></option>
+                  <option value="CHANKIA"></option>
+                  <option value="BAHIRPUR"></option>
+                  <option value="RAUTARA"></option>
+                  <option value="KOLAPOL"></option>
+                  <option value="SHANKARPUR"></option>
+                  <option value="BELLE"></option>
+                  <option value="PANPUR"></option>
+                </datalist>
+              </label>
+              <label for="">
+                <p class="inputs-header">Location</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <input
+                  id="ct_location"
+                  col="LOCATION"
+                  class="inputs"
+                  placeholder="0"
+                  type="text"
+                />
+              </label>
+            </div>
+            <div class="status-subs fields">
+              <label for="">
+                <p class="inputs-header">Alternate Number</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <input
+                  id="ct_AlNumber"
+                  col="ALTERNATE NUMBER"
+                  class="inputs"
+                  placeholder="0"
+                  type="text"
+                />
+              </label>
+
+              <label for="">
+                <p class="inputs-header">Con Type</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <input
+                  id="ct_con_type"
+                  col="CON TYPE"
+                  class="inputs"
+                  list="con_type"
+                  placeholder="Con Type"
+                  name="con_type"
+                  id="con_type"
+                />
+                <datalist id="con_type">
+                  <option value="UJJAWALA"></option>
+                  <option value="GENERAL"></option>
+                </datalist>
+              </label>
+            </div>
+            <div class="b-date fields">
+              <label for="">
+                <p class="inputs-header">Book Date</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <input
+                  id="ct_book_date"
+                  col="Booking Date"
+                  class="inputs"
+                  placeholder="Book date..."
+                  type="text"
+                />
+              </label>
+              <label for="">
+                <p class="inputs-header">Annual date</p>
+                <div class="ico">
+                  <i class="bi bi-check2"></i>
+                </div>
+                <input
+                  id="ct_annual_date"
+                  col="ANNUAL DATE"
+                  class="inputs"
+                  placeholder="Annual date.."
+                  type="text"
+                />
+              </label>
+            </div>
+
+            <label id="btn_label" for="">
+              <button class="submit_btn">SUBMIT</button>
+            </label>
+          </div>
+          <!-- </div> -->
+        </div>
+        <div class="card">
+          <div id="l10User_loader" class="loader-grey">
+            <div class="loader"></div>
+          </div>
+          <div class="card-header"><p>Last 10 User Added</p></div>
+          <table>
+            <tr>
+              <th>Consumer Id</th>
+              <th>Name</th>
+              <th>Mobile No</th>
+              <th>Subscription</th>
+            </tr>
+            <tbody id="lastAddedUsers"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
